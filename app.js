@@ -15,8 +15,8 @@ Exercise 2:
 */
 
 // Complete Exercise 2 below...
-foods.push('pizza', 'cheeseburger')
 
+foods.push('pizza', 'cheeseburger')
 
 console.log('Exercise 2 Result:\n', foods);
 
@@ -26,9 +26,8 @@ Exercise 3:
 */
 
 // Complete Exercise 3 below...
+
 foods.unshift('taco')
-
-
 
 console.log('Exercise 3 Result:\n', foods);
 
@@ -39,8 +38,6 @@ Exercise 4:
 
 // Complete Exercise 4 below...
 let favFood = foods[1]
-
-
 
 console.log('Exercise 4 Result:\n', favFood);
 
@@ -85,8 +82,8 @@ Exercise 8:
 */
 
 // Complete Exercise 8 below...
-let soyIdx = foods.indexOf('tofu')
 
+let soyIdx = foods.indexOf('tofu')
 
 console.log('Exercise 8 Result:\n', soyIdx);
 
@@ -97,17 +94,17 @@ Exercise 9:
 */
 
 // Complete Exercise 9 below...
+
 let allFoods = ''
 for (let i = 0; i < foods.length; i++) {
-    let curr = foods[i]
-    if (!foods[i + 1]) {
-        console.log('i', i);
-        allFoods += ' ' + curr
-    } else {
-        allFoods += ` ${curr} ->`
-    }
+  let curr = foods[i]
+  if (!foods[i + 1]) {
+    console.log('i', i);
+    allFoods += ' ' + curr
+  } else {
+    allFoods += ` ${curr} ->`
+  }
 }
-
 
 console.log('Exercise 9 Result:\n', allFoods);
 
@@ -119,13 +116,14 @@ Exercise 10:
 // Complete Exercise 10 below...
 
 const arrIncludes = (arr, param) => {
-    if (Array.isArray(arr)) {
-        for (let i = 0; i < arr.length; i++) {
-            let curr = arr[i];
-            if (param === curr) return true;
-            return false
-        }
+  if (Array.isArray(arr)) {
+    for (let i = 0; i < arr.length; i++) {
+      let curr = arr[i];
+      if (param === curr) return true;
+      return false
     }
+  }
+  return null
 }
 
 let hasSoup = arrIncludes(foods, 'soup')
@@ -142,9 +140,14 @@ const nums = [100, 5, 23, 15, 21, 72, 9, 45, 66, 7, 81, 90];
 
 // Complete Exercise 11 below...
 
+const odds = []
+nums.forEach((num) => {
+  if (num % 2 === 1) {
+    odds.push(num)
+  }
+})
 
-
-// console.log('Exercise 11 Result:\n', odds);
+console.log('Exercise 11 Result:\n', odds);
 
 /*
 Exercise 12:
@@ -156,12 +159,37 @@ Exercise 12:
 
 // Complete Exercise 12 below...
 
+const fizz = []
+const buzz = []
+const fizzbuzz = []
 
+//forEach() with if/else
+nums.forEach((num) => {
+  if (num % 5 === 0 && num % 3 === 0) {
+    fizzbuzz.push(num);
+  } else if (num % 3 === 0) {
+    fizz.push(num);
+  } else if (num % 5 === 0) {
+    buzz.push(num);
+  } else {
+    console.log(`Your number ${num} was not FizzBuzz worthy!`);
+  }
+})
 
-// console.log('Exercise 12 Results:');
-// console.log('  fizz:', fizz);
-// console.log('  buzz:', buzz);
-// console.log('  fizzbuzz:', fizzbuzz);
+//Ternary with for loop
+/*
+for (let i = 0; i < nums.length; i++) {
+  let num = nums[i]
+  num % 5 === 0 && num % 3 === 0 ? fizzbuzz.push(num) : null;
+  num % 3 === 0 ? fizz.push(num) : null;
+  num % 5 === 0 ? buzz.push(num) : null;
+}
+*/
+
+console.log('Exercise 12 Results:');
+console.log('  fizz:', fizz);
+console.log('  buzz:', buzz);
+console.log('  fizzbuzz:', fizzbuzz);
 
 /*
 Exercise 13:
@@ -170,17 +198,17 @@ Exercise 13:
 */
 
 const numArrays = [
-    [100, 5, 23],
-    [15, 21, 72, 9],
-    [45, 66],
-    [7, 81, 90]
+  [100, 5, 23],
+  [15, 21, 72, 9],
+  [45, 66],
+  [7, 81, 90]
 ];
 
 // Complete Exercise 13 below...
+let lastIdx = numArrays.length - 1
+numList = numArrays[lastIdx]
 
-
-
-// console.log('Exercise 13 Result:\n', numList);
+console.log('Exercise 13 Result:\n', numList);
 
 /*
 Exercise 14:
@@ -189,9 +217,9 @@ Exercise 14:
 
 // Complete Exercise 14 below...
 
+let num = numArrays[2][1]
 
-
-// console.log('Exercise 14 Result:\n', num);
+console.log('Exercise 14 Result:\n', num);
 
 /*
 Exercise 15:
@@ -201,6 +229,11 @@ Exercise 15:
 
 // Complete Exercise 15 below...
 
+let total = 0
+numArrays.forEach((innerArr) => {
+  innerArr.forEach((num) => {
+    total += num
+  })
+})
 
-
-// console.log('Exercise 15 Result:\n', total);
+console.log('Exercise 15 Result:\n', total);
